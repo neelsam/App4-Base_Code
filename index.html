@@ -4,7 +4,7 @@
  
 THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION OR ANY ILLNESS
  
- 
+<!-- Added my name to the author list as author 1 due to my majority contribution -->
 Authors in chronological order of contribution:
 Neel Sampangirama
 Author 1
@@ -35,7 +35,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 <head> 
 	<title>Hello World</title>  
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<link rel="stylesheet" href="w3.css">
 	<link rel="stylesheet" href="w3-colors-flat.css">
@@ -55,27 +55,27 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
         function strepAdd(){
-            allergy_count = allergy_count + 1;
+            strep_count = strep_count + 1;
 		//code adds a function for when the person provides an answer that corresponds with allergies
         }
 
         function fluAdd(){
-            cold_count = cold_count + 1;
+            flu_count = flu_count + 1;
 		//The code adds a function for when the person provides an answer that corresponds with cold -->
 
         }
 
 	
-	
+	//I have created a function to allow the HTML to broadcast the results
 	function resulting() {
 
-		var allergyPercent = allergy_count/6*100; //used to find the allergy percentage
-		var coldPercent = cold_count/6*100; //used to find the cold percentage
+		var strepPercent = strep_count/6*100; //used to find the allergy percentage
+		var fluPercent = flu_count/6*100; //used to find the cold percentage
 		var resultText = document.getElementById("results"); //this is used to retrieve the results
-		resultText.innerHTML = "Probability it is allergies (%) =" + allergyPercent + "<br> Probability it is a cold (%) =" + coldPercent; + "<br> The alternative idea is that you do not have either of these and may have something else like the flue"; //this is used to display the results and the alt survey assisted diagnostic idea
+		resultText.innerHTML = "Probability it is Strep Throat (%) =" + strepPercent + "<br> Probability it is Influenza (%) =" + fluPercent; + "<br> The alternative idea is that you do not have either of these and may have something else like the flue"; //this is used to display the results and the alt survey assisted diagnostic idea
 	}
 	
-	
+<!-- Adding a new page to start my HTML program -->	
 </script>	
 
 
@@ -108,11 +108,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <body>
 	<body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
+	<h1>Influenza or Strep Throat?</h1>
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>The Flu and Strep can be similar in their symptoms and signs. Please try out my program to determine if it is the flu or strep throat!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
