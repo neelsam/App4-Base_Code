@@ -2,10 +2,12 @@
 <html> 
 <!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
  
-THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION OR ANY ILLNESS
  
  
 Authors in chronological order of contribution:
+Neel Sampangirama
+Author 1
 Tim Riedel
 Author 2
  
@@ -16,12 +18,15 @@ Research Educator:
 Timothy Riedel
 triedel@utexas.edu
  
-Brief Description of Goal of Code:
-blah, blah, blah,
- 
-Known Issues:
-blah, blah, blah, blah
-Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
+<!-- I added my description of my code. -->
+
+<!-- Brief Description of Goal of Code: The purpose of the code is to help determine if a person has strep throat or the flu. The code will ask a series of questions to help determine whether a person
+has the flu or strep throat. However, this code will not be able to determine if a person has neither a flu or strep throat.
+https://www.w3schools.com/w3css/default.asp
+https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+-->
+	
+Known Issues: There are no known issues with this code. Please let me know if there are and I will be sure to fix the code accordingly.
 
 References:
 https://www.w3schools.com/w3css/default.asp
@@ -37,9 +42,40 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </head> 
 
 <script>
+	// The following code lets you know when the file was last modified.
+	// This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
+       var docMod = document.lastModified;
+       alert("This file last modified  " + docMod);
+       console.log("This file last modified  " + docMod);
+	// If you find the alert box annoying, comment out that line and timestamp will still show up in the debugging console. 
+	//This is Dr. Riedel's Code, not my code.
 
-	//YOUR JAVASCRIPT GOES HERE
+	var strep_count = 0;		 //Here we set the following variables to keep track of the count, they equal zero since we started
+        var flu_count = 0;		//Here we set the following variables to keep track of the count, they equal zero since we started
 
+
+        function strepAdd(){
+            allergy_count = allergy_count + 1;
+		//code adds a function for when the person provides an answer that corresponds with allergies
+        }
+
+        function fluAdd(){
+            cold_count = cold_count + 1;
+		//The code adds a function for when the person provides an answer that corresponds with cold -->
+
+        }
+
+	
+	
+	function resulting() {
+
+		var allergyPercent = allergy_count/6*100; //used to find the allergy percentage
+		var coldPercent = cold_count/6*100; //used to find the cold percentage
+		var resultText = document.getElementById("results"); //this is used to retrieve the results
+		resultText.innerHTML = "Probability it is allergies (%) =" + allergyPercent + "<br> Probability it is a cold (%) =" + coldPercent; + "<br> The alternative idea is that you do not have either of these and may have something else like the flue"; //this is used to display the results and the alt survey assisted diagnostic idea
+	}
+	
+	
 </script>	
 
 
@@ -66,10 +102,324 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 }
 </style>
 
-<body>
+<!-- Below code is used to create the introduction page. The following code is used to ensure the user gets directions on how to start -->
+
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+<body>
+	<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+	
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY! This does not provide accurate or real life results!</p>
+</footer>
+
+	</div>
+	
+<!-- Below code is used to create a new page. -->	
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+ 
+<!-- Below code is used to develop the first question. I have created two buttons that allow for the user to respond. These buttons relay a response in the javascript -->
+
+	
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY! This does not provide accurate or real life results!</p>
+</footer>
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Are your eyes watery or itchy?</p>   
+	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
+         	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+
+ </div><!-- /content -->
+
+	</div>
+	
+<!-- Below code is used to create a new page. -->
+	<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+ 
+</div>
+	
+<!-- Below code is used to develop the second question. I have created two buttons that allow for the user to respond. These buttons relay a response in the javascript -->
+
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY! This does not provide accurate or real life results!</p>
+</footer>
+		<h1>Question 2</h1>
+	</div>
+         	
+				<div id="content" class="w3-container">
+	<p>Do you have fever?</p>    
+	<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
+         	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+
+
+ </div><!-- /content -->
+
+	</div>
+<!-- Below code is used to create a new page. -->
+	<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+<!-- Below code is used to develop the third question. I have created two buttons that allow for the user to respond. These buttons relay a response in the javascript -->
+
+	<div class="page" id="three"> 
+	<div class="w3-container w3-flat-carrot">
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY! This does not provide accurate or real life results!</p>
+</footer>
+		<h1>Question 3</h1>
+	</div>
+	
+		<div id="content" class="w3-container">
+	<p>Do you have a sore throat??</p> 
+	<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a> 
+         	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+		
+	</div><!-- /content -->
+<!-- Below code is used to create a new page. -->
+	<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+ 
+<!-- Below code is used to develop the fourth question. I have created two buttons that allow for the user to respond. These buttons relay a response in the javascript -->
+
+
+	<div class="page" id="four"> 
+	<div class="w3-container w3-flat-carrot">
+	<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY! This does not provide accurate or real life results!</p>
+</footer>
+		<h1>Question 4</h1>
+	</div>
+	
+		<div id="content" class="w3-container">
+	<p>Are your symptoms seasonal or chronic?</p> 
+	<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a> 
+         	<a href="#five"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+		
+	</div><!-- /content -->
+		<!-- Below code is used to create a new page. -->
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+ 
+<!-- Below code is used to develop the fifth question (Allergy). I have created two buttons that allow for the user to respond. These buttons relay a response in the javascript -->
+
+
+	<div class="page" id="five"> 
+	<div class="w3-container w3-flat-carrot">
+	<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY! This does not provide accurate or real life results!</p>
+</footer>
+		<h1>Question 5</h1>
+	</div>
+	
+		<div id="content" class="w3-container">
+	<p>Do you have itchy eyes or skin?</p> 
+	<a href="#six"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a> 
+         	<a href="#six"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+		
+	</div><!-- /content -->
+<!-- Below code is used to create a new page. -->	
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+ 
+<!-- Below code is used to develop the sixth question (cold). I have created two buttons that allow for the user to respond. These buttons relay a response in the javascript -->
+
+
+	<div class="page" id="six"> 
+	<div class="w3-container w3-flat-carrot">
+	<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY! This does not provide accurate or real life results!</p>
+</footer>
+		<h1>Question 6</h1>
+	</div>
+	
+		<div id="content" class="w3-container">
+	<p>Do your symptoms get worse in all areas, regardless of specific location?</p> 
+	<a href="#results"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a> 
+         	<a href="#results"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+		
+	</div><!-- /content -->		
+		
+<!-- Below code is used to create a new page. -->
+	<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>	
+<!-- Below code is used to develop results page and the button, which takes you on to the next page.
+I have created one button that allow for the user to respond. These buttons relay a response in the javascript function I created to get the results-->
+		
+	</div>
+
+	<div class="page" id="results"> 
+	<div class="w3-container w3-flat-carrot">
+		<p id="results"></p>
+	</div>
+	
+		<div id="content" class="w3-container">
+	<p>Let's see your results?</p> 
+	<a href="#results"  onclick="resulting();" class="w3-btn w3-black">Results</a>
+         	
+		
+	</div><!-- /content -->
+	</div>		
+		
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY! This does not provide accurate or real life results!</p>
+</footer>
+
+</body>
+</html>
 	
 </body>
 </html>
+
+
